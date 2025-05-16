@@ -1,0 +1,45 @@
+# GitHub Pages 兼容配置
+title: Xinchun Li
+first_name: Xinchun
+middle_name: 
+last_name: Li
+email: lixch65@mail2.sysu.edu.cn
+description: >
+  Welcome to my academic website.
+url: https://chunn20.github.io
+baseurl: /chunwebsite
+
+# 只使用GitHub Pages支持的插件
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jemoji
+  - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
+
+# 基本设置
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable: true
+
+# 禁用不支持的特性
+toc:
+  enabled: false
+pagination:
+  enabled: false
+
+# 基本目录设置
+include: ['_pages']
+exclude:
+  - bin
+  - Gemfile
+  - Gemfile.lock
+  - vendor 
