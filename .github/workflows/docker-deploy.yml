@@ -30,7 +30,7 @@ jobs:
             --user root \
             --volume="${PWD}:/srv/jekyll" \
             jekyll/jekyll:4.2.2 \
-            sh -c "apk add --no-cache python3 py3-pip && pip3 install jupyter && bundle install --frozen && jekyll build"
+            sh -c "apk add --no-cache python3 py3-pip python3-dev build-base linux-headers libffi-dev openssl-dev && pip3 install jupyter && bundle install --frozen && jekyll build"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
