@@ -1,0 +1,21 @@
+# Jekyll网站常用忽略文件
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.DS_Store
+.tweet-cache/
+vendor/
+.bundle/
+vendor/bundle/
+node_modules/
+.vscode/
+.idea/
+
+# 日志文件
+*.log
+
+# 本地配置文件
+.env
+.env.*
+!.env.example 

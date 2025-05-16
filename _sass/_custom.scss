@@ -1,0 +1,691 @@
+// Custom styles for About Me page
+
+// Section titles with subtle elegant styling
+.section-title {
+  color: var(--global-theme-color); // Use theme color variable
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--global-theme-color); // Use theme color variable
+  }
+  
+  body.dark & {
+    color: #78aeff; // Lighter blue for dark mode
+    
+    &::after {
+      background-color: #78aeff;
+    }
+  }
+}
+
+// Highlighted text that follows theme colors
+.highlight-text {
+  color: var(--global-theme-color);
+  font-weight: 600;
+}
+
+// Section containers with subtle borders
+.content-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border-left: 3px solid var(--global-theme-color); // Use theme color variable
+  background-color: var(--global-card-bg-color); // Use card background color
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  // Dark mode styles
+  body.dark & {
+    background-color: #2d2d2d;
+    border-left: 3px solid #78aeff;
+  }
+  
+  // Photo card variant (no left border)
+  &.photo-card {
+    border-left: none;
+    
+    body.dark & {
+      border-left: none;
+    }
+  }
+  
+  // Collapsible details/summary styling
+  details {
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    overflow: hidden;
+    
+    summary {
+      padding: 0.7rem 1rem;
+      background-color: var(--global-bg-color);
+      color: var(--global-theme-color);
+      font-weight: 500;
+      cursor: pointer;
+      border-left: 3px solid var(--global-theme-color);
+      transition: all 0.3s ease;
+      margin-bottom: 0.5rem;
+      border-radius: 4px;
+      
+      &:hover {
+        background-color: var(--global-hover-color);
+      }
+      
+      &::-webkit-details-marker {
+        margin-right: 0.5rem;
+      }
+    }
+    
+    &[open] summary {
+      margin-bottom: 0.5rem;
+    }
+    
+    & > :not(summary) {
+      padding: 0.5rem 1rem 0.5rem 2rem;
+    }
+    
+    // Dark mode styles
+    body.dark & {
+      summary {
+        background-color: #1e1e1e;
+        color: #78aeff;
+        border-left: 3px solid #78aeff;
+        
+        &:hover {
+          background-color: #2a2a2a;
+        }
+      }
+    }
+  }
+}
+
+// Skill category styling with vertical spacing
+.skill-category {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background-color: var(--global-bg-color);
+  border-radius: 8px;
+  border-top: 3px solid var(--global-theme-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  
+  h3 {
+    color: var(--global-theme-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  h4 {
+    color: var(--global-theme-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  ul {
+    padding-left: 1.5rem;
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  // Dark mode styles
+  body.dark & {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+    h3, h4 {
+      color: #78aeff;
+    }
+  }
+}
+
+// Skill item styling similar to methodology-item
+.skill-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+  
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  h3, summary {
+    color: var(--global-theme-color);
+    margin-bottom: 0.7rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    
+    body.dark & {
+      color: #78aeff;
+    }
+  }
+  
+  body.dark & {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// Profile photo styling
+.profile-photo {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  // Dark mode styles
+  body.dark & {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    
+    &:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+// Custom CV button styling
+.cv-button {
+  background-color: var(--global-theme-color);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--global-theme-color);
+  
+  &:hover {
+    background-color: transparent;
+    color: var(--global-theme-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  // Dark mode styles
+  body.dark & {
+    background-color: #3a76d8;
+    box-shadow: 0 3px 6px rgba(74, 134, 232, 0.2);
+    
+    &:hover {
+      background-color: #4a86e8;
+      box-shadow: 0 5px 10px rgba(74, 134, 232, 0.3);
+    }
+  }
+}
+
+// Custom styles for Contact page
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.contact-card, .research-card {
+  background-color: var(--global-card-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--global-theme-color);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  body.dark & {
+    background-color: #2d2d2d;
+    border-top: 4px solid #78aeff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+    
+    &:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+}
+
+.card-title {
+  background-color: rgba(var(--global-theme-color-rgb), 0.05);
+  color: var(--global-theme-color);
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  
+  body.dark & {
+    background-color: rgba(120, 174, 255, 0.1);
+    color: #78aeff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+// Left-aligned card title for blog posts
+.post-item .card-title {
+  text-align: left;
+  padding-left: 0;
+  background-color: transparent;
+  border-bottom: none;
+}
+
+.card-content {
+  padding: 1.5rem;
+  
+  p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  
+  ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    
+    li {
+      margin-bottom: 0.7rem;
+      position: relative;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      
+      &::before {
+        content: "";
+        position: absolute;
+        left: -1.2rem;
+        top: 0.7rem;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: var(--global-theme-color);
+      }
+      
+      body.dark &::before {
+        background-color: #78aeff;
+      }
+    }
+  }
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-item {
+  h3 {
+    color: var(--global-theme-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+    
+    body.dark & {
+      color: #78aeff;
+    }
+  }
+  
+  p {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+  
+  a {
+    color: var(--global-theme-color);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(var(--global-theme-color-rgb), 0.4);
+    transition: all 0.2s ease;
+    
+    &:hover {
+      border-bottom: 1px solid var(--global-theme-color);
+    }
+    
+    body.dark & {
+      color: #78aeff;
+      border-bottom: 1px dashed rgba(120, 174, 255, 0.4);
+      
+      &:hover {
+        border-bottom: 1px solid #78aeff;
+      }
+    }
+  }
+}
+
+// Custom styles for Research page
+
+.research-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.project-highlight {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-image {
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+    
+    body.dark & {
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+      
+      &:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+}
+
+.project-details {
+  h3 {
+    color: var(--global-theme-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    
+    body.dark & {
+      color: #78aeff;
+    }
+  }
+  
+  .project-date {
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  
+  .project-link {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: var(--global-theme-color);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dashed rgba(var(--global-theme-color-rgb), 0.4);
+    transition: all 0.2s ease;
+    
+    &:hover {
+      border-bottom: 1px solid var(--global-theme-color);
+    }
+    
+    body.dark & {
+      color: #78aeff;
+      border-bottom: 1px dashed rgba(120, 174, 255, 0.4);
+      
+      &:hover {
+        border-bottom: 1px solid #78aeff;
+      }
+    }
+  }
+}
+
+.methodology-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+  
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  h3 {
+    color: var(--global-theme-color);
+    margin-bottom: 0.7rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    
+    body.dark & {
+      color: #78aeff;
+    }
+  }
+  
+  body.dark & {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.presentation-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+  
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  h3 {
+    color: var(--global-theme-color);
+    margin-bottom: 0.7rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    
+    body.dark & {
+      color: #78aeff;
+    }
+  }
+  
+  .presentation-venue, 
+  .presentation-location, 
+  .presentation-type {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+  
+  .presentation-venue {
+    font-weight: 500;
+  }
+  
+  .presentation-type {
+    font-style: italic;
+    color: var(--global-text-color-light);
+  }
+  
+  body.dark & {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// Custom styles for Blog page
+
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.blog-card {
+  background-color: var(--global-card-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--global-theme-color);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  body.dark & {
+    background-color: #2d2d2d;
+    border-top: 4px solid #78aeff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+    
+    &:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+}
+
+.post-item {
+  padding: 1.5rem;
+}
+
+.post-date {
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.post-title {
+  color: var(--global-theme-color);
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  
+  body.dark & {
+    color: #78aeff;
+  }
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.post-tag {
+  background-color: rgba(var(--global-theme-color-rgb), 0.1);
+  color: var(--global-theme-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  
+  body.dark & {
+    background-color: rgba(120, 174, 255, 0.1);
+    color: #78aeff;
+  }
+}
+
+.post-excerpt {
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.post-footer {
+  margin-top: 1.2rem;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  padding-top: 1.2rem;
+  
+  body.dark & {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.post-link {
+  color: var(--global-theme-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 1px dashed rgba(var(--global-theme-color-rgb), 0.4);
+  
+  &:hover {
+    border-bottom: 1px solid var(--global-theme-color);
+  }
+  
+  body.dark & {
+    color: #78aeff;
+    border-bottom: 1px dashed rgba(120, 174, 255, 0.4);
+    
+    &:hover {
+      border-bottom: 1px solid #78aeff;
+    }
+  }
+}
+
+// Custom styles for About Me page
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.about-card {
+  background-color: var(--global-card-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--global-theme-color);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  body.dark & {
+    background-color: #2d2d2d;
+    border-top: 4px solid #78aeff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+    
+    &:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+} 

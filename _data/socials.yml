@@ -1,0 +1,52 @@
+# this file contains the social media links and usernames of the author
+# the socials will be displayed in the order they are defined here
+
+email: lixch65@mail2.sysu.edu.cn # your email address
+github_username: Chunn20 # your GitHub user name
+facebook_id: # your facebook id (预留)
+instagram_id: # your instagram id (预留)
+rss_icon: true # set to true to show the RSS icon
+
+# 以下是已删除的社交媒体链接
+# acm_id: # your dl.acm.org/profile/id
+# blogger_url: # your blogger URL
+# bluesky_url: # your bluesky URL
+# dblp_url: # your DBLP profile url
+# discord_id: # your discord id
+# flickr_id: # your flickr id
+# gitlab_username: # your GitLab user name
+# ieee_id: # your ieeexplore.ieee.org/author/id
+# inspirehep_id: 1010907 # Inspire HEP author ID
+# kaggle_id: # your kaggle id
+# keybase_username: # your keybase user name
+# lastfm_id: # your lastfm id
+# lattes_id: # your ID on Lattes
+# leetcode_id: # your LeetCode id
+# linkedin_username: # your LinkedIn user name
+# mastodon_username: # your mastodon instance+username
+# medium_username: # your Medium username
+# orcid_id: # your ORCID ID
+# osf_id: # your OSF ID
+# pinterest_id: # your pinterest id
+# publons_id: # your ID on Publons
+# quora_username: # your Quora username
+# research_gate_profile: # your profile on ResearchGate
+# scholar_userid: qc6CJjYAAAAJ # your Google Scholar ID
+# scopus_id: # your profile on Scopus
+# semanticscholar_id: # your Semantic Scholar ID
+# spotify_id: # your spotify id
+# stackoverflow_id: # your stackoverflow id
+# telegram_username: # your Telegram user name
+# unsplash_id: # your unsplash id
+# wechat_qr: # filename of your wechat qr-code
+# whatsapp_number: # your WhatsApp number
+# wikidata_id: # your wikidata id
+# wikipedia_id: # your wikipedia id
+# work_url: # work page URL
+# x_username: # your X handle
+# youtube_id: # your youtube channel id
+# zotero_username: # your zotero username
+# custom_social: # can be any name here other than the ones already defined above
+#   logo: https://www.alberteinstein.com/wp-content/uploads/2024/03/cropped-favicon-192x192.png
+#   title: Custom Social
+#   url: https://www.alberteinstein.com/
