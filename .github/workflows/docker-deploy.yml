@@ -24,13 +24,13 @@ jobs:
       - name: Prepare .tweet-cache directory
         run: mkdir -p .tweet-cache && chmod 777 .tweet-cache
 
-      - name: Build Jekyll site
+      - name: Build Jekyll site (with Jupyter)
         run: |
           docker run --rm \
             --user root \
             --volume="${PWD}:/srv/jekyll" \
             jekyll/jekyll:4.2.2 \
-            bash -c "bundle install --frozen && jekyll build"
+            bash -c "apt-get update && apt-get install -y python3-pip && pip3 install jupyter && bundle install --frozen && jekyll build"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
