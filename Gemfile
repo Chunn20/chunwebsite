@@ -6,6 +6,7 @@ gem 'csv'
 gem 'logger'
 gem 'base64'
 gem 'bigdecimal'
+gem 'activesupport', '< 8.0.0'
 
 # Core plugins that directly affect site building
 group :jekyll_plugins do
