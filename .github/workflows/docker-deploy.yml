@@ -18,10 +18,12 @@ jobs:
       - name: Setup Docker
         uses: docker/setup-buildx-action@v3
 
+      - name: Make Gemfile.lock read-only
+        run: chmod 444 Gemfile.lock || true
+
       - name: Build Jekyll site
         run: |
           docker run --rm \
-            --user $(id -u):$(id -g) \
             --volume="${PWD}:/srv/jekyll" \
             jekyll/jekyll:4.2.2 \
             jekyll build
