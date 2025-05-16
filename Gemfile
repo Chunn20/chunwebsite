@@ -7,6 +7,7 @@ gem 'logger'
 gem 'base64'
 gem 'bigdecimal'
 gem 'activesupport', '< 8.0.0'
+gem 'multi_xml', '< 0.7.1'
 
 # Core plugins that directly affect site building
 group :jekyll_plugins do
