@@ -23,7 +23,7 @@ jobs:
           docker run --rm \
             --volume="${PWD}:/srv/jekyll" \
             jekyll/jekyll:4.2.2 \
-            jekyll build
+            bash -c "bundle install --frozen && jekyll build"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
