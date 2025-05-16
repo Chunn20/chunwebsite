@@ -21,6 +21,9 @@ jobs:
       - name: Prepare .jekyll-cache directory
         run: mkdir -p .jekyll-cache && chmod 777 .jekyll-cache
 
+      - name: Prepare .tweet-cache directory
+        run: mkdir -p .tweet-cache && chmod 777 .tweet-cache
+
       - name: Build Jekyll site
         run: |
           docker run --rm \
