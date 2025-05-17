@@ -24,6 +24,9 @@ jobs:
       - name: Prepare .tweet-cache directory
         run: mkdir -p .tweet-cache && chmod 777 .tweet-cache
 
+      - name: Remove _site directory if exists
+        run: rm -rf _site
+
       - name: Build Jekyll site (with Jupyter)
         run: |
           docker run --rm \
