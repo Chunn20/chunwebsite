@@ -25,9 +25,10 @@ jobs:
         run: mkdir -p .tweet-cache && chmod 777 .tweet-cache
 
       - name: Remove and recreate _site directory
-        run: sudo rm -rf _site .jekyll-cache .tweet-cache
-        mkdir -p _site .jekyll-cache .tweet-cache
-        chmod -R 777 _site .jekyll-cache .tweet-cache
+        run: |
+          sudo rm -rf _site .jekyll-cache .tweet-cache
+          mkdir -p _site .jekyll-cache .tweet-cache
+          chmod -R 777 _site .jekyll-cache .tweet-cache
 
       - name: Build Jekyll site (with Jupyter)
         run: |
