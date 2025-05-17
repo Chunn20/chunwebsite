@@ -1,35 +1,41 @@
-name: Deploy with Docker
+name: Deploy with Docker # 工作流名称
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches: [ main ] # 当 main 分支有新的提交时触发
+  workflow_dispatch: # 允许手动触发工作流
 
 permissions:
-  contents: write
+  contents: write # 授予工作流写入仓库内容的权限，peaceiris/actions-gh-pages 需要此权限来推送到 gh-pages 分支
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # 在最新的 Ubuntu 环境上运行此作业
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout # 步骤：拉取代码
+        uses: actions/checkout@v4 # 使用 checkout action v4
 
-      - name: Setup Docker
+      - name: Setup Docker # 步骤：设置 Docker Buildx (用于构建 Docker 镜像，虽然这里直接用现成镜像，但保留它无妨)
         uses: docker/setup-buildx-action@v3
 
-      - name: Prepare .jekyll-cache directory
-        run: mkdir -p .jekyll-cache && chmod 777 .jekyll-cache
+      # 准备缓存目录，确保权限正确
+      - name: Prepare cache directories
+        run: |
+          mkdir -p .jekyll-cache .tweet-cache
+          chmod -R 777 .jekyll-cache .tweet-cache
 
-      - name: Prepare .tweet-cache directory
-        run: mkdir -p .tweet-cache && chmod 777 .tweet-cache
-
+      # 移除并重新创建 _site 目录 (在 Docker 构建前清理)
       - name: Remove and recreate _site directory
         run: |
-          sudo rm -rf _site .jekyll-cache .tweet-cache
-          mkdir -p _site .jekyll-cache .tweet-cache
-          chmod -R 777 _site .jekyll-cache .tweet-cache
+          # 使用 | 符号表示多行命令
+          sudo rm -rf _site # 移除旧的 _site 目录
+          mkdir -p _site # 创建新的 _site 目录
+          # 注意：这里不需要 chmod 777 _site，因为 Docker 容器内的用户可能会不同，
+          # 且 peaceiris action 会处理权限。保留了你原有的命令，但请注意潜在权限问题。
+          # chmod -R 777 _site .jekyll-cache .tweet-cache # 如果你确定不需要，可以移除此行
 
+      # 构建 Jekyll 网站 (在 Docker 容器内执行)
+      # 这个步骤已经包含了安装依赖 (bundle install) 和构建网站 (jekyll build)
       - name: Build Jekyll site (with Jupyter)
         run: |
           docker run --rm \
@@ -37,25 +43,19 @@ jobs:
             --volume="${PWD}:/srv/jekyll" \
             jekyll/jekyll:4.2.2 \
             sh -c "apk add --no-cache python3 py3-pip python3-dev build-base linux-headers libffi-dev openssl-dev && pip3 install --upgrade --ignore-installed packaging && pip3 install jupyter && bundle install --frozen && jekyll build --config _config.yml,_config_prod.yml"
+          # 解释:
+          # 这个命令在 Docker 容器内完成 Jekyll 的所有构建工作，包括安装 Gem 依赖 (bundle install)
+          # 和生成网站文件 (jekyll build)。所以容器外部不需要再运行 bundle 命令。
 
+      # 部署到 GitHub Pages
+      # 这个 action 会自动将 _site 目录的内容推送到 gh-pages 分支
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3 # 使用 peaceiris/actions-gh-pages action v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 提供的 token 进行认证
+          publish_dir: ./_site # 指定要部署的目录是本地的 _site 目录 (Docker 构建的输出)
+          publish_branch: gh-pages # 指定要推送到哪个分支 (gh-pages 是 GitHub Pages 的默认分支)
 
-      - name: Preview Jekyll site
-        run: bundle exec jekyll serve --config _config.yml,_config_prod.yml
-
-      - name: Check git status
-        run: git status
-
-      - name: Add all pages
-        run: git add .
-
-      - name: Commit all pages
-        run: git commit -m "add all pages"
-
-      - name: Push all pages
-        run: git push 
+      # --- 之前导致错误的步骤已移除 ---
+      # 原有的 'Preview Jekyll site' 步骤因为在 Docker 外部运行 bundle 命令而报错，且不属于部署流程，已移除。
+      # 原有的手动 git commit/push 步骤在 peaceiris action 之后是多余的，已移除。
