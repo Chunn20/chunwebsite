@@ -13,7 +13,7 @@ nav_order: 2
   <h2 class="card-title">My Academic Journey</h2>
   <div class="card-content project-highlight">
     <div class="project-image">
-      <img class="profile-photo" src="/assets/img/prof_pic_color.png" alt="Personal photo">
+      <img class="profile-photo" src="{{ site.baseurl }}/assets/img/prof_pic_color.png" alt="Personal photo">
     </div>
     <div class="project-details">
       <p>

@@ -1,0 +1,14 @@
+url: "https://chunn20.github.io"
+baseurl: "/chunwebsite"
+
+nav_item:
+  - title: Home
+    url: "{{ site.baseurl }}/"
+  - title: About Me
+    url: "{{ site.baseurl }}/aboutme/"
+  - title: Research
+    url: "{{ site.baseurl }}/research/"
+  - title: Blog
+    url: "{{ site.baseurl }}/blog/"
+  - title: Contact
+    url: "{{ site.baseurl }}/contact/" 

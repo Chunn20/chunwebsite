@@ -25,7 +25,9 @@ jobs:
         run: mkdir -p .tweet-cache && chmod 777 .tweet-cache
 
       - name: Remove and recreate _site directory
-        run: rm -rf _site && mkdir -p _site && chmod 777 _site
+        run: sudo rm -rf _site .jekyll-cache .tweet-cache
+        mkdir -p _site .jekyll-cache .tweet-cache
+        chmod -R 777 _site .jekyll-cache .tweet-cache
 
       - name: Build Jekyll site (with Jupyter)
         run: |
@@ -33,11 +35,26 @@ jobs:
             --user root \
             --volume="${PWD}:/srv/jekyll" \
             jekyll/jekyll:4.2.2 \
-            sh -c "apk add --no-cache python3 py3-pip python3-dev build-base linux-headers libffi-dev openssl-dev && pip3 install --upgrade --ignore-installed packaging && pip3 install jupyter && bundle install --frozen && jekyll build"
+            sh -c "apk add --no-cache python3 py3-pip python3-dev build-base linux-headers libffi-dev openssl-dev && pip3 install --upgrade --ignore-installed packaging && pip3 install jupyter && bundle install --frozen && jekyll build --config _config.yml,_config_prod.yml"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
-          publish_branch: gh-pages 
+          publish_branch: gh-pages
+
+      - name: Preview Jekyll site
+        run: bundle exec jekyll serve --config _config.yml,_config_prod.yml
+
+      - name: Check git status
+        run: git status
+
+      - name: Add all pages
+        run: git add .
+
+      - name: Commit all pages
+        run: git commit -m "add all pages"
+
+      - name: Push all pages
+        run: git push 
