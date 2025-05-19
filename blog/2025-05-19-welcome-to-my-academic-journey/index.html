@@ -17,12 +17,13 @@
   
   
     
-      a post with vega lite | Xinchun Li
+      Welcome to My Academic Journey: A First Post | Xinchun Li
     
   
 </title>
 <meta name="author" content="Xinchun Li">
-<meta name="description" content="this is what included vega lite code could look like">
+<meta name="description" content="Welcome! My research is rooted in computational communication, integrating in-depth qualitative methods.  I aim to transcend traditional quantitative paradigms, gaining micro-level insights into individual experiences  and emotional trajectories, to understand the complexity and resonance of human nature within social media emotion,  digital mourning, and online communities from a humanistic perspective. Feel free to explore my site to learn more  about my academic journey, and I look forward to connecting with you.
+">
 
   <meta name="keywords" content="academic-website, portfolio-website, computational-communication, qualitative-research">
 
@@ -59,7 +60,7 @@
   <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
 
 <link rel="stylesheet" href="/chunwebsite/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
-<link rel="canonical" href="https://chunn20.github.io/chunwebsite/sample-posts/2024/01/26/vega-lite.html">
+<link rel="canonical" href="https://chunn20.github.io/chunwebsite/blog/2025-05-19-welcome-to-my-academic-journey/">
 
 <!-- Dark Mode -->
 <script src="/chunwebsite/assets/js/theme.js?a81d82887dd692e91686b43de4542f18"></script>
@@ -241,8 +242,10 @@
             
               
                 
-                <li class="nav-item ">
+                <li class="nav-item active">
                   <a class="nav-link" href="/chunwebsite/blog/">Blog
+                    
+                      <span class="sr-only">(current)</span>
                     
                   </a>
                 </li>
@@ -298,29 +301,36 @@
 
 <div class="post">
   <header class="post-header">
-    <h1 class="post-title">a post with vega lite</h1>
+    <h1 class="post-title">Welcome to My Academic Journey: A First Post</h1>
     <p class="post-meta">
-      Created on January 26, 2024
+      Created on May 19, 2025
+      by Xinchun Li
       
-      , last updated on April 13, 2024
       
     </p>
     <p class="post-tags">
       
-        <i class="fa-solid fa-calendar fa-sm"></i> 2024
+        <a href="/chunwebsite/blog/2025"> <i class="fa-solid fa-calendar fa-sm"></i> 2025 </a>
       
       
           ·  
         
           
-            <i class="fa-solid fa-hashtag fa-sm"></i> formatting
+            <a href="/chunwebsite/blog/tag/academic"> <i class="fa-solid fa-hashtag fa-sm"></i> academic</a>
           
           
              
           
         
           
-            <i class="fa-solid fa-hashtag fa-sm"></i> charts
+            <a href="/chunwebsite/blog/tag/introduction"> <i class="fa-solid fa-hashtag fa-sm"></i> introduction</a>
+          
+          
+             
+          
+        
+          
+            <a href="/chunwebsite/blog/tag/digital-research"> <i class="fa-solid fa-hashtag fa-sm"></i> digital research</a>
           
           
         
@@ -330,7 +340,7 @@
           ·  
         
           
-            <i class="fa-solid fa-tag fa-sm"></i> sample-posts
+            <a href="/chunwebsite/blog/category/blog"> <i class="fa-solid fa-tag fa-sm"></i> Blog</a>
           
           
         
@@ -341,97 +351,13 @@
   <article class="post-content">
     
     <div id="markdown-content">
-      <p>This is an example post with some <a href="https://vega.github.io/vega-lite/" rel="external nofollow noopener" target="_blank">vega lite</a> code.</p>
+      <p>Hello and welcome to my personal academic website and its accompanying blog! I’m thrilled to open this space as a complement to my more formal research pages.</p>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">vega_lite
-</span><span class="sb">{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A dot plot showing each movie in the database, and the difference from the average movie rating. The display is sorted by year to visualize everything in sequential order. The graph is for all Movies before 2019.",
-  "data": {
-    "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/movies.json"
-  },
-  "transform": [
-    {"filter": "datum['IMDB Rating'] != null"},
-    {"filter": {"timeUnit": "year", "field": "Release Date", "range": [null, 2019]}},
-    {
-      "joinaggregate": [{
-        "op": "mean",
-        "field": "IMDB Rating",
-        "as": "AverageRating"
-      }]
-    },
-    {
-      "calculate": "datum['IMDB Rating'] - datum.AverageRating",
-      "as": "RatingDelta"
-    }
-  ],
-  "mark": "point",
-  "encoding": {
-    "x": {
-      "field": "Release Date",
-      "type": "temporal"
-    },
-    "y": {
-      "field": "RatingDelta",
-      "type": "quantitative",
-      "title": "Rating Delta"
-    },
-    "color": {
-      "field": "RatingDelta",
-      "type": "quantitative",
-      "scale": {"domainMid": 0},
-      "title": "Rating Delta"
-    }
-  }
-}</span>
-<span class="p">```</span>
-</code></pre></div></div>
+<p>While my research delves into the fascinating intersection of computational communication, qualitative methods, and humanistic inquiry – uncovering nuanced insights into group dynamics and shared emotional landscapes within digital social phenomena – this blog will be a more informal arena. Here, I plan to share reflections on ongoing projects, offer deeper dives into specific methodologies, discuss emerging trends in our field, and perhaps even share a glimpse into the academic journey itself.</p>
 
-<p>Which generates:</p>
+<p>My hope is for this blog to be a place for curiosity, exploration, and thoughtful discussion. It’s an opportunity to connect beyond published papers, to share evolving ideas, and to engage with the broader academic community and anyone interested in the humanistic side of digital studies.</p>
 
-<pre><code class="language-vega_lite">{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A dot plot showing each movie in the database, and the difference from the average movie rating. The display is sorted by year to visualize everything in sequential order. The graph is for all Movies before 2019.",
-  "data": {
-    "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/movies.json"
-  },
-  "transform": [
-    {"filter": "datum['IMDB Rating'] != null"},
-    {"filter": {"timeUnit": "year", "field": "Release Date", "range": [null, 2019]}},
-    {
-      "joinaggregate": [{
-        "op": "mean",
-        "field": "IMDB Rating",
-        "as": "AverageRating"
-      }]
-    },
-    {
-      "calculate": "datum['IMDB Rating'] - datum.AverageRating",
-      "as": "RatingDelta"
-    }
-  ],
-  "mark": "point",
-  "encoding": {
-    "x": {
-      "field": "Release Date",
-      "type": "temporal"
-    },
-    "y": {
-      "field": "RatingDelta",
-      "type": "quantitative",
-      "title": "Rating Delta"
-    },
-    "color": {
-      "field": "RatingDelta",
-      "type": "quantitative",
-      "scale": {"domainMid": 0},
-      "title": "Rating Delta"
-    }
-  }
-}
-</code></pre>
-
-<p>This plot supports both light and dark themes.</p>
+<p>Thank you for visiting. I look forward to the conversations and insights we can share here.</p>
 
     </div>
   </article>
@@ -495,12 +421,6 @@
 
 
 
-
-  <!-- Vega -->
-  <script defer src="" integrity="" crossorigin="anonymous"></script>
-  <script defer src="" integrity="" crossorigin="anonymous"></script>
-  <script defer src="" integrity="" crossorigin="anonymous"></script>
-  <script defer src="/chunwebsite/assets/js/vega-setup.js?7c7bee055efe9312afc861b128fe5f36" type="text/javascript"></script>
 
 
 
