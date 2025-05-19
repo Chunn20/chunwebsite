@@ -15,6 +15,10 @@ description: >
   about my academic journey, and I look forward to connecting with you.
 keywords: academic-website, portfolio-website, computational-communication, qualitative-research  # add your own keywords or leave empty
 
+baseurl: "/chunwebsite"
+url: "https://chunn20.github.io"
+
+
 lang: en # the language of your site (for SEO)
 icon: ⚛️  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -112,7 +116,7 @@ contact_note: >
 contact_button: Contact Me
 contact_button_url: /contact/
 cv_button: Download CV
-cv_button_url: /assets/pdf/cv.pdf
+cv_button_url: /assets/pdf/Xin_chun_s_Resume.pdf
 
 # -----------------------------------------------------------------------------
 # Navigation bar

@@ -7,6 +7,26 @@ nav: true
 nav_order: 2
 ---
 
+<style>
+.skill-item {
+  margin-bottom: 2rem;
+}
+.skill-item h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.skill-item details {
+  margin-bottom: 1rem;
+}
+.skill-item summary {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+.skill-item p {
+  margin-bottom: 1rem;
+}
+</style>
+
 <div class="about-container">
 
 <div class="about-card">

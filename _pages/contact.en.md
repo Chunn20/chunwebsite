@@ -27,7 +27,8 @@ nav_order: 5
       
       <div class="contact-item">
         <h3>Academic Affiliation</h3>
-        <p>Sun Yat-sen University (East Campus)<br>
+        <p> School of Journalism and Communication<br>
+       Sun Yat-sen University (East Campus)<br>
         132 Wai Huan Dong Road, Panyu District<br>
         Guangzhou, Guangdong 510006<br>
         China</p>
