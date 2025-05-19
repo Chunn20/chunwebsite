@@ -7,73 +7,59 @@ nav: true
 nav_order: 3
 ---
 
-<div class="research-container">
+<style>
+.research-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
 
-<div class="research-card">
-  <h2 class="card-title">Current Research Focus</h2>
-  <div class="card-content">
-    <p>My research explores computational communication and digital emotional expression, examining how online communities form around shared experiences. I combine computational methods with qualitative approaches to gain insights into group dynamics and shared emotional landscapes within digital spaces.</p>
-    
-    <h3>Key Research Areas</h3>
-    <ul>
-      <li>Computational Communication</li>
-      <li>Digital Emotional Expression</li>
-      <li>Online Communities</li>
-      <li>Digital Mourning</li>
-      <li>Women's Issues in Digital Environments</li>
-    </ul>
-  </div>
-</div>
+.section-title {
+  color: var(--global-theme-color);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
 
-<div class="research-card">
-  <h2 class="card-title">Featured Project</h2>
-  <div class="card-content project-highlight">
-    <div class="project-image">
-      <img src="{{ '/assets/img/12.jpg' | relative_url }}" alt="Research project visualization">
-    </div>
-    <div class="project-details">
-      <h3>Digital Emotion Analysis</h3>
-      <p class="project-date">2024-Present</p>
-      <p>This ongoing research examines emotional expression patterns on social media platforms, utilizing natural language processing and qualitative analysis to identify emotional resonance within digital communities.</p>
-      <p><strong>Status:</strong> In Progress</p>
-      <a href="#" class="project-link">More details coming soon</a>
-    </div>
-  </div>
-</div>
+/* 自定义样式以适应您的需求 */
+.about-card .card-title {
+  color: var(--global-theme-color);
+}
 
-<div class="research-card">
-  <h2 class="card-title">Methodological Approach</h2>
-  <div class="card-content">
-    <p>My research methodology bridges quantitative and qualitative approaches:</p>
-    
-    <div class="methodology-item">
-      <h3>Computational Analysis</h3>
-      <p>Using text mining, sentiment analysis, and topic modeling to process large-scale digital communication data.</p>
-    </div>
-    
-    <div class="methodology-item">
-      <h3>Qualitative Depth</h3>
-      <p>Conducting in-depth interviews and digital ethnography to contextualize computational findings and explore lived experiences.</p>
-    </div>
-    
-    <div class="methodology-item">
-      <h3>Mixed Methods Integration</h3>
-      <p>Combining computational and qualitative insights to develop a more comprehensive understanding of digital phenomena.</p>
+.card-content h3 {
+  color: var(--global-theme-color);
+  font-size: 1.1rem; /* 减小Key Research Areas的字体大小 */
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+</style>
+
+<div class="about-container">
+  <div class="about-card">
+    <h2 class="card-title">Research Overview</h2>
+    <div class="card-content">
+      <p>My research explores computational communication and digital emotional expression, examining how online communities form around shared experiences. I combine computational methods with qualitative approaches to gain insights into group dynamics and shared emotional landscapes within digital spaces.</p>
+      
+      <h3>Key Research Areas</h3>
+      <ul>
+        <li><span class="highlight-text">Computational Communication</span>: Applying computational methods to understand communication patterns in digital environments.</li>
+        <li><span class="highlight-text">Digital Emotional Expression</span>: Exploring how individuals express and process emotions in online spaces.</li>
+        <li><span class="highlight-text">Online Communities</span>: Analyzing the formation, dynamics, and impact of digital communities on individual identity and collective experience.</li>
+        <li><span class="highlight-text">Digital Mourning</span>: Investigating the practices and communities that form around grief and remembrance in virtual environments.</li>
+        <li><span class="highlight-text">Women's Issues</span>: Focusing on women's expression, identity construction, empowerment, and related gender issues in digital environments.</li>
+      </ul>
     </div>
   </div>
-</div>
 
-<div class="research-card">
-  <h2 class="card-title">Conference Presentations</h2>
-  <div class="card-content">
-    <div class="presentation-item">
-      <h3>Digital Communication in Online Communities</h3>
-      <p class="presentation-venue">International Conference on Digital Media, 2024</p>
-      <p class="presentation-location">Virtual Conference</p>
-      <p class="presentation-type">Paper Presentation</p>
-      <p>A template placeholder for future conference presentations and academic talks.</p>
+  <div class="about-card">
+    <h2 class="card-title">Research Projects</h2>
+    <div class="card-content">
+      {% include research-cards.liquid %}
     </div>
   </div>
-</div>
-
 </div> 

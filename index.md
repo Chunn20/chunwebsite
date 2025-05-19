@@ -22,7 +22,7 @@ Feel free to explore my site to learn more about my academic journey, and I look
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    <a href="{{ site.contact_button_url }}" class="btn btn-primary">{{ site.contact_button }}</a>
-    <a href="{{ site.cv_button_url }}" class="btn btn-primary">{{ site.cv_button }}</a>
+    <a href="{{ site.baseurl }}{{ site.contact_button_url }}" class="btn btn-primary">{{ site.contact_button }}</a>
+    <a href="{{ site.baseurl }}{{ site.cv_button_url }}" class="btn btn-primary">{{ site.cv_button }}</a>
   </div>
 </div> 

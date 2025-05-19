@@ -52,10 +52,10 @@ nav_order: 4
           <a href="{{ site.baseurl }}/blog/tag/introduction">Introduction</a>
           <a href="{{ site.baseurl }}/blog/tag/digital-research">Digital Research</a>
         </span>
-      </div>
+  </div>
       <div class="post-excerpt">
         Hello and welcome to my personal academic website and its accompanying blog! I'm thrilled to open this space as a complement to my more formal research pages. While my research delves into the fascinating intersection of computational communication, qualitative methods, and humanistic inquiry...
-      </div>
+</div>
     </article>
   </div>
 </div>

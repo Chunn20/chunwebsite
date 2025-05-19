@@ -1,0 +1,24 @@
+- title: "The Golden 48 Hours of Public Opinion: Opinion Influence Prediction and Governance Based on COT-LLM"
+  description: "Employed large language models (LLMs) to classify and analyze public‐opinion sentiments, optimizing prompts via Chain‑of‑Thought (CoT) and Emotional Prompt techniques to achieve 86% classification accuracy. Integrated sentiment outputs with social‐platform interaction metrics and applied XGBoost combined with a genetic algorithm to predict the influence of different opinion trends."
+  findings: "Identified anger as the emotion exerting the greatest impact on opinion dynamics and provided visual analyses across various event types. Assessed the feasibility and uncertainty of LLM‐based sentiment analysis and proposed emotion‐driven strategies for opinion governance."
+  tags: ["LLM", "Sentiment Analysis", "Public Opinion", "XGBoost"]
+
+- title: "Interaction Between Emotion and Agenda: Temporal Analysis of Multi-actor Public Opinion on Weibo"
+  description: "Using large language models and data analysis techniques, this project analyzed public opinion agendas and emotional expressions in the 'Zhengzhou Students Night Ride to Kaifeng' incident. Python was used for data processing, with LDA topic modeling and BERT-wwm-ext for sentiment analysis, combined with social network analysis and Granger causality."
+  findings: "Public opinion showed a typical 'three-stage' change. There was a negative correlation between the agendas of institutional and ordinary users, with limited influence from official agendas. Ordinary users expressed emotions autonomously, and interactions were found between topics and emotions, with some topics predicting emotional changes."
+  tags: ["BERT", "LDA", "Social Network Analysis", "Public Opinion"]
+
+- title: "Rational Empathy Without 'Mansplaining': Analysis of Interactions and Emotional Contagion in Xiaohongshu Community"
+  description: "This study examines the unique space for gender discussions on the Xiaohongshu platform, focusing on male users' non-stereotypical reviews of the feminist film Good Things. Using computational methods, the study analyzes 3,655 high-interaction comments from November 26 to December 16, 2024."
+  findings: "The study finds three key patterns in the heated discussion of 'non-stereotypical' male discourses: First, users highlight traits like 'humor' and 'open-mindedness,' deconstructing the 'fatherly flavor' stereotype and promoting a 'progressive male' identity. Second, strong-tie networks spread information within small groups, while weak-tie networks enable broader dissemination."
+  tags: ["Gender Studies", "Sentiment Analysis", "Social Media Analysis"]
+
+- title: "The Evolution of Public Figures' Death Discourse in the Confucian Context"
+  description: "This study explores how traditional mourning, empowered by social media, is transitioning to digital spaces, blending public and personalized elements. Focusing on Confucian culture and Chinese public figures, it examines the technical logic, symbolism, and emotional mobilization in digital mourning."
+  findings: "The study reveals that digital mourning continues and extends Confucian ethics, forming a 'digital emotional community.' This practice merges traditional values with modern, individualized, and public mourning rituals, allowing for a more personalized yet collective expression of grief in the digital age."
+  tags: ["Digital Culture", "Confucianism", "Mourning Studies"]
+
+- title: "Same in the Cloud: Sustained Connection of Fans' Parasocial Relationships and Collective Memory Construction"
+  description: "This study investigates the synergistic mechanism between sustained fan engagement and parasocial relationships in celebrity digital mourning. Using the case of singer Khalil Fong's passing, we employed text mining and in-depth interviews to explore how online fan practices contribute to collective memory construction."
+  findings: "The research reveals that continuous online interactions reinforce cognitive connections, deepening parasocial relationships. Individual expressions of grief transform into public commemoration through shared symbolic language and collective emotional resonance. The fan-idol dynamic evolves beyond mere consumption to the collective preservation of cultural legacy."
+  tags: ["Fan Studies", "Digital Mourning", "Collective Memory"] 
