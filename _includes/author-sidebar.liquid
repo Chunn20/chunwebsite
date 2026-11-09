@@ -1,0 +1,22 @@
+<aside class="author-sidebar" aria-label="About the author">
+  {% assign author_image = site.profile.image | prepend: '/assets/img/' %}
+  <a class="author-avatar" href="{{ '/' | relative_url }}" aria-label="{{ site.title | escape }} — home">
+    <img src="{{ author_image | relative_url }}" alt="{{ site.first_name | escape }} {{ site.last_name | escape }}" width="160" height="160">
+  </a>
+  <div class="author-details">
+    <h2 class="author-name">{{ site.first_name }} {{ site.last_name }}</h2>
+    <p class="author-affiliation">{{ site.affiliation }}</p>
+    <div class="author-address">{{ site.profile.address }}</div>
+    <ul class="author-links">
+      {% if site.email %}
+        <li><a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a></li>
+      {% endif %}
+      {% if site.github_username %}
+        <li><a href="https://github.com/{{ site.github_username }}"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></li>
+      {% endif %}
+      {% if site.cv_button_url %}
+        <li><a href="{{ site.cv_button_url | relative_url }}"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Curriculum Vitae</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</aside>

@@ -22,8 +22,6 @@ url: "https://chunn20.github.io"
 lang: en # the language of your site (for SEO)
 icon: ⚛️  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-url: # the base hostname & protocol for your site
-baseurl: # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 
@@ -52,10 +50,10 @@ rss_icon: true
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 
 # Dimensions
-max_width: 800px
+max_width: 1140px
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
@@ -119,20 +117,8 @@ cv_button: Download CV
 cv_button_url: /assets/pdf/Xin_chun_s_Resume.pdf
 
 # -----------------------------------------------------------------------------
-# Navigation bar
+# Navigation bar (configured by nav and nav_order in _pages front matter)
 # -----------------------------------------------------------------------------
-
-nav_item:
-  - title: Home
-    url: /
-  - title: About Me
-    url: /aboutme/
-  - title: Research
-    url: /research/
-  - title: Blog
-    url: /blog/
-  - title: Contact
-    url: /contact/
 
 # -----------------------------------------------------------------------------
 # Bilingual Setup
@@ -191,6 +177,17 @@ kramdown:
 include: ['_pages']
 exclude:
   - bin
+  - docs
+  - README.md
+  - LICENSE
+  - Dockerfile
+  - docker-compose.yml
+  - docker-compose-slim.yml
+  - package.json
+  - package-lock.json
+  - purgecss.config.js
+  - requirements.txt
+  - node_modules
   - Gemfile
   - Gemfile.lock
   - vendor
@@ -362,7 +359,7 @@ enable_navbar_social:       false  # enables displaying social links in the
 enable_project_categories:  true   # enables categorization of projects into
                                    # multiple categories
 enable_medium_zoom:         true   # enables image zoom feature (as on medium.com)
-enable_progressbar:         true   # enables a horizontal progress bar linked to the vertical scroll position
+enable_progressbar:         false  # restrained academic layout without a reading progress bar
 
 # -----------------------------------------------------------------------------
 # Library versions
