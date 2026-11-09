@@ -30,6 +30,7 @@ jobs:
           # 使用 | 符号表示多行命令
           sudo rm -rf _site # 移除旧的 _site 目录
           mkdir -p _site # 创建新的 _site 目录
+          sudo chown -R 1000:1000 _site # Jekyll 镜像使用 UID 1000 写入构建产物
           # 注意：这里不需要 chmod 777 _site，因为 Docker 容器内的用户可能会不同，
           # 且 peaceiris action 会处理权限。保留了你原有的命令，但请注意潜在权限问题。
           # chmod -R 777 _site .jekyll-cache .tweet-cache # 如果你确定不需要，可以移除此行
