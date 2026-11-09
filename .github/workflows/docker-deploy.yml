@@ -42,7 +42,15 @@ jobs:
             --user root \
             --volume="${PWD}:/srv/jekyll" \
             jekyll/jekyll:4.2.2 \
-            sh -c "apk add --no-cache python3 py3-pip python3-dev build-base linux-headers libffi-dev openssl-dev && python3 -m pip install --upgrade pip && python3 -m pip install --upgrade --ignore-installed packaging && python3 -m pip install jupyter && bundle install --frozen && jekyll build --config _config.yml,_config_prod.yml"
+            sh -ec '
+              apk add --no-cache python3 py3-virtualenv python3-dev build-base linux-headers libffi-dev openssl-dev
+              python3 -m virtualenv /tmp/jekyll-python
+              export PATH="/tmp/jekyll-python/bin:$PATH"
+              python -m pip install --upgrade pip
+              python -m pip install jupyter
+              bundle install --frozen
+              bundle exec jekyll build --config _config.yml,_config_prod.yml
+            '
           # 解释:
           # 这个命令在 Docker 容器内完成 Jekyll 的所有构建工作，包括安装 Gem 依赖 (bundle install)
           # 和生成网站文件 (jekyll build)。所以容器外部不需要再运行 bundle 命令。
